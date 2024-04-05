@@ -11,8 +11,9 @@ This project is dedicated to designing, implementing, and maintaining a robust a
 7. [Deployment](#deployment)
 
 ## Install Required Tools
-### Docker
+### Docker & Docker-Compose
 Install Docker by following the instructions <a href="https://docs.docker.com/engine/install/">here.</a>
+Install Docker-compose by following the instructions <a href="https://docs.docker.com/compose/install/linux/">here.</a>
 ### Terraform
 Install Terraform by following the instructions <a href="https://developer.hashicorp.com/terraform/install?product_intent=terraform">here.</a>
 ### Python
@@ -24,12 +25,10 @@ Install Python by following the instructions <a href="https://www.python.org/dow
 
 ### Dockerized Applications
 - To containerize  a temperature scraper application that collects temperature data (in °C) for Zurich,
-London, Miami, Tokyo, and Singapore, the first step is setting up a suitable environment. The second step is to begin writing your Dockerfile for the temperature scraper application. After completing your Dockerfile, proceed to build & run your application using the command:
+London, Miami, Tokyo, and Singapore, the first step is setting up a suitable environment. 
+- The second step is to begin writing your Dockerfile for the temperature scraper application. After completing your Dockerfile, proceed to build & run your application using the command:
 ```bash
-# Build Docker image
 docker build -t your_image_name .
- 
-# Run Docker container using the built image
 docker run -d --name your_container_name your_image_name
 ```
 
@@ -60,8 +59,14 @@ docker run -d --name your_container_name your_image_name
 ### Relational Database
 - Set up an instance of a relational database (e.g., Amazon RDS with PostgreSQL) to store incoming temperature data efficiently.
 - first thing you have to do is to spin up an instance for your database using terraform. 
-- second thing is  
+- Next is to SSH into your EC2 instance using the following command: 
+ ```bash
+ssh -i your-key.pem ubuntu@your-ec2-ip
+```
+- Next, you have to follow the instructions given <a href="https://www.postgresql.org/download/linux/ubuntu/.">below.</a>or <a href="https://emmanuelibok505.medium.com/setting-up-a-postgresql-database-and-designing-an-appropriate-schema-915474a1e842/.">Documentation.</a> to install the PostgreSQL database on your EC2 instance. 
+
 - Designed an appropriate schema for the data storage.
+- You can check out my <a href="https://emmanuelibok505.medium.com/setting-up-a-postgresql-database-and-designing-an-appropriate-schema-915474a1e842/.">article.</a>
 
 ### Kafka Integration
 - Created a consumer to read data from Kafka and store it in the database.
