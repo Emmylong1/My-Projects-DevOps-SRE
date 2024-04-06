@@ -19,6 +19,7 @@ rad.json
 #License-file
 *.flf
 #Test results file
+<<<<<<< HEAD
 TestResults.xml
 # Local .terraform directories
 **/.terraform/
