@@ -12,3 +12,23 @@ resource "aws_instance" "example" {
   }
 }
 
+
+
+resource "null_resource" "install_node_exporter" {
+  provisioner "local-exec" {
+    command = "./node-exporter.sh"
+  }
+}
+
+resource "null_resource" "install_prometheus" {
+  provisioner "local-exec" {
+    command = "./prometheus.sh"
+  }
+}
+
+resource "null_resource" "install_grafana" {
+  provisioner "local-exec" {
+    command = "./grafana.sh"
+  }
+}
+

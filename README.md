@@ -78,6 +78,8 @@ ssh -i your-key.pem ubuntu@your-ec2-ip
 
 ### Implementation
 - Implemented a monitoring and logging solution to track the health and performance of the entire system.
+- First is to set up a machine on any of the cloud provider of your chioce that you want make use off.
+- Here is the bash script to install prometheus and grafana                                           
 
 ## Documentation
 
