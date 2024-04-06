@@ -25,5 +25,5 @@ TestResults.xml
 **/.terraform/
 
 # .tfstate files
-../terraform_state/*.tfstate
-../terraform_state/*.tfstate.*
+../terraform.tfstate/*.tfstate
+../terraform.tfstate/*.tfstate.*
