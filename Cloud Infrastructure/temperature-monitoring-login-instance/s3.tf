@@ -1,7 +1,7 @@
 resource "aws_s3_bucket" "b" {
-  bucket = "temperature-c29df1234"
+  bucket = "temperature-data-c29df12345"
 
   tags = {
-    Name = "temperature-c29df1234"
+    Name = "temperature-data-c29df12345"
   }
 }
