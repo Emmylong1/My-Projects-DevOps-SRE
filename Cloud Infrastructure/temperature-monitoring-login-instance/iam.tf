@@ -36,7 +36,7 @@ resource "aws_iam_role_policy" "s3-mybucket-role-policy" {
               "s3:ListBucket"
             ],
             "Resource": [
-              "arn:aws:s3:::temperature-c29df1234"
+              "arn:aws:s3:::temperature-data-c29df12345"
             ]
         },
         {
@@ -45,7 +45,7 @@ resource "aws_iam_role_policy" "s3-mybucket-role-policy" {
               "s3:GetObject"
             ],
             "Resource": [
-              "arn:aws:s3:::temperature-c29df1234/*"
+              "arn:aws:s3:::temperature-data-c29df12345/*"
             ]
         }
     ]

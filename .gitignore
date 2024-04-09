@@ -25,5 +25,7 @@ TestResults.xml
 **/.terraform/
 
 # .tfstate files
-../terraform.tfstate/*.tfstate
-../terraform.tfstate/*.tfstate.*
+.terraform.lock.hcl
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
