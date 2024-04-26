@@ -1,6 +1,6 @@
 resource "aws_instance" "example" {
   ami                    = var.AMIS[var.AWS_REGION]
-  count                  = "2" 
+  count                  = "1" 
   instance_type          = "t3.medium"
   key_name               = var.key_name
   subnet_id              = aws_subnet.main-public-1.id
@@ -10,12 +10,18 @@ resource "aws_instance" "example" {
     Environment = "Dev"
     Name        = "monitor-instance"
   }
-   provisioner "local-exec" {
-    command = "ansible-playbook -i '${self.public_ip},' ansible/playbook.yml"
-  }
 }
 
+resource "null_resource" "install_prom_node_graf" {
+  # This resource acts as a trigger for the provisioner
+  triggers = {
+    terraform_apply = timestamp()
+  }
 
+  provisioner "local-exec" {
+    command = "/install_prom_node_graf.sh"
+  }
+}
 
 
 
