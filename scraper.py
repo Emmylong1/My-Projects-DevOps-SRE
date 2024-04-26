@@ -3,7 +3,7 @@ import schedule
 import time
 
 def get_weather_data():
-    locations = ['Zurich', 'London', 'Miami', 'Tokyo', 'calabar', 'Singapore']
+    locations = ['Zurich', 'London', 'Miami', 'Tokyo', 'Singapore']
     temperatures = {}
 
     for location in locations:
@@ -19,7 +19,7 @@ def get_weather_data():
         print(f'Weather condition in {location}: {weather_condition}, Temperature: {temperature}°C')
 
 # Schedule the task
-schedule.every().minute.do(get_weather_data)
+schedule.every().hour.do(get_weather_data)
 
 # Keep the script running
 while True:

@@ -20,7 +20,6 @@ Install Terraform by following the instructions <a href="https://developer.hashi
 Install Python by following the instructions <a href="https://www.python.org/downloads/.">here.</a>
 
 
-
 ## Containerization
 
 ### Dockerized Applications
@@ -30,6 +29,16 @@ London, Miami, Tokyo, and Singapore, the first step is setting up a suitable env
 ```bash
 docker build -t your_image_name .
 docker run -d --name your_container_name your_image_name
+```
+```bash
+# Dockerfile for temperature scraper
+FROM python:3.8
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+EXPOSE 8100
+CMD ["python", "scraper.py"]
 ```
 
 ## Temperature Scraper
@@ -81,18 +90,8 @@ ssh -i your-key.pem ubuntu@your-ec2-ip
 - First is to set up a machine on any of the cloud provider of your chioce that you want make use off.
 - Here is the bash script to install prometheus and grafana                                           
 
-## Documentation
-
-### Infrastructure Setup
-- Documented the entire infrastructure setup, including instructions for deployment, scaling, and troubleshooting.
-
-## Deployment
-
 ### Deployment Process
 - Sketched a deployment process that allows for seamless updates and rollbacks.
 
 ## Repository Structure
 The GitHub repository contains all the code and configuration files required for the infrastructure setup.
-
-## Final Deliverable
-The final deliverable is a GitHub repository containing all the aforementioned points. For detailed documentation and troubleshooting, please refer to the repository.
